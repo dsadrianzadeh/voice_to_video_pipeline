@@ -154,20 +154,29 @@ Every model is set in `src/voice_to_video_pipeline/config.py`. Slugs and prices 
 
 ```text
 voice_to_video_pipeline/
-├── pyproject.toml
-├── uv.lock
-├── .env.example
-├── docs/example/        # cover image used in this README
+
+├── docs/example/
+│   └── cover.jpg  # cover image used in this README
 ├── src/voice_to_video_pipeline/
-│   ├── config.py        # models, paths, and API key
-│   ├── client.py        # HTTP helper and cost tracker
+│   ├── __init__.py
+│   ├── client.py  # HTTP helper and cost tracker
+│   ├── config.py  # models, paths, and API key
+│   ├── pipeline.py
 │   ├── step01_speech.py
 │   ├── step02_script.py
 │   ├── step03_image.py
 │   ├── step04_voice.py
-│   ├── step05_video.py
-│   └── pipeline.py
-└── tests/               # offline tests, no network or credit used
+│   └── step05_video.py
+├── tests/  # offline tests, no network or credit used
+│   ├── conftest.py
+│   └── test_pipeline_units.py
+├── .env.example
+├── .gitignore
+├── .python-version
+├── README.md
+├── list_tts.py
+├── pyproject.toml
+└── uv.lock
 ```
 
 ## Testing
