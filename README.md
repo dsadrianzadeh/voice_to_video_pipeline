@@ -150,7 +150,7 @@ Press Enter to start recording and Enter again to stop. Results are saved to `ou
 
 Every model is set in `src/voice_to_video_pipeline/config.py`. Slugs and prices change over time, so check [OpenRouter's model list](https://openrouter.ai/models) before running. Video dominates the cost, and OpenRouter checks your credit balance against the maximum cost before it starts generating. Each run ends with a per-step cost summary, but the voiceover cost is not tracked.
 
-## Project Structure
+## Project Layout
 
 ```text
 voice_to_video_pipeline/
