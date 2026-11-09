@@ -4,7 +4,7 @@ Speak an idea into your microphone and get a fully scripted video. One OpenRoute
 
 ## Pipeline
 
-| Step | Module | What it does |
+| Step | Module | What It Does |
 |---|---|---|
 | 1 | `step01_speech.py` | Records the microphone and transcribes it |
 | 2 | `step02_script.py` | Turns the idea into a JSON plan (title, narration, image prompt, video prompt) |
@@ -16,9 +16,9 @@ Speak an idea into your microphone and get a fully scripted video. One OpenRoute
 
 ## Example
 
-**Spoken idea:** "A glass-domed greenhouse on a dune glows green under the Milky Way while sand streams across the ground in the wind."
+**Spoken Idea:** "A glass-domed greenhouse on a dune glows green under the Milky Way while sand streams across the ground in the wind."
 
-### Terminal output
+### Terminal Output
 
 ```text
 $ uv run python -m voice_to_video_pipeline.pipeline
@@ -75,7 +75,7 @@ Saved to D:\python_projects\voice_to_video_pipeline\output\20261107_195735
     - TOTAL          $2.4401
 ```
 
-### Cost of this run
+### Cost of This Run
 
 | Step | Cost (USD) |
 |---|---|
@@ -83,7 +83,7 @@ Saved to D:\python_projects\voice_to_video_pipeline\output\20261107_195735
 | Script | $0.0000 |
 | Image | $0.0400 |
 | Voiceover | not tracked |
-| Video (8 s) | $2.4000 |
+| Video (6 s) | $2.4000 |
 | **Total** | **$2.4401** |
 
 ### Plan
@@ -146,20 +146,20 @@ uv run python -m voice_to_video_pipeline.pipeline
 
 Press Enter to start recording and Enter again to stop. Results are saved to `output/<timestamp>/` as `plan.txt`, `cover.jpg`, `voiceover.mp3`, and `video.mp4`.
 
-## Models and cost
+## Models and Cost
 
 Every model is set in `src/voice_to_video_pipeline/config.py`. Slugs and prices change over time, so check [OpenRouter's model list](https://openrouter.ai/models) before running. Video dominates the cost, and OpenRouter checks your credit balance against the maximum cost before it starts generating. Each run ends with a per-step cost summary, but the voiceover cost is not tracked.
 
-## Project structure
+## Project Structure
 
 ```text
 voice_to_video_pipeline/
 ├── pyproject.toml
 ├── uv.lock
 ├── .env.example
-├── docs/example/        # cover image and plan used in this README
+├── docs/example/        # cover image used in this README
 ├── src/voice_to_video_pipeline/
-│   ├── config.py        # models, paths and API key
+│   ├── config.py        # models, paths, and API key
 │   ├── client.py        # HTTP helper and cost tracker
 │   ├── step01_speech.py
 │   ├── step02_script.py
